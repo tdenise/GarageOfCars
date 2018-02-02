@@ -12,15 +12,24 @@ public class Car {
 		this.name = car2.name; 
 		this.horsePower = car2.horsePower; 
 	}
-	/*
-	public String toString() {
-		
-	}
 	
-	public boolean compareCars(Car car1, Car car2){
+	public String toString() {
+		String str = "Car name: " + name + " Horsepower: " + horsePower; 
+		return str; 
+	}
+
+	public boolean compareCars(Car car2){
+	boolean status;
+      if (name.equals(car2.name) &&
+          horsePower == car2.horsePower)
+         status = true;
+      else
+         status = false;
+      
+      return status;
 		
 	}
-	*/
+
 	
 	public String getName() {
 		return name; 
@@ -30,9 +39,10 @@ public class Car {
 		return horsePower; 
 	}
 	
-	/*
-	public void copyCar(Car car1, Car car2) {
-		
-	}
-	*/
+	   public Car copy()
+	   {
+	      Car copyObject = new Car(name, horsePower);
+	      
+	      return copyObject;
+	   }
 }
